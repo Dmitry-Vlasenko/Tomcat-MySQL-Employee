@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isErrorPage="true" %>
+         pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Error</title>
-    </head>
-    <body>
-        <center>
-            <h1 style="color: red">Error</h1>
-            <h3><%=exception.getMessage() %></h3>
-        </center>
-    </body>
+<head>
+    <title>Error</title>
+</head>
+<body>
+<center>
+    <h1 style="color: red">Error</h1>
+    <h3><%=exception.getMessage() %>
+    </h3>
+</center>
+</body>
 </html>
