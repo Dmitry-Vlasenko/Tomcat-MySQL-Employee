@@ -50,7 +50,7 @@ public class EmployeeController extends HttpServlet {
         String lastName = request.getParameter("lastName");
         String phoneNumber = request.getParameter("phoneNumber");
         String positionName = request.getParameter("positionName");
-        LOGGER.log(Level.INFO, "lastName" + lastName);
+        LOGGER.log(Level.INFO, "lastName" + phoneNumber);
         Employee newEmployee = new Employee(firstName, lastName, phoneNumber, positionName);
         repository.create(newEmployee);
         response.sendRedirect("list");
@@ -59,7 +59,6 @@ public class EmployeeController extends HttpServlet {
     private void read(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         List<Employee> listEmployee = repository.read();
-        LOGGER.log(Level.INFO, listEmployee.toString());
         request.setAttribute("listEmployee", listEmployee);
         RequestDispatcher dispatcher =
                 request.getRequestDispatcher("pages/employee_list.jsp");

@@ -60,7 +60,7 @@
                 <tr>
                     <th>First name:</th>
                     <td>
-                        <input type="text" name="title" size="45"
+                        <input type="text" name="firstName" size="45"
                                value="<c:out value='${employee.firstName}' />"
                         />
                     </td>
@@ -68,7 +68,7 @@
                 <tr>
                     <th>Last name:</th>
                     <td>
-                        <input type="text" name="author" size="45"
+                        <input type="text" name="lastName" size="45"
                                value="<c:out value='${employee.lastName}' />"
                         />
                     </td>
