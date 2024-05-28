@@ -2,11 +2,11 @@ package com.dvlasenko.app.entity;
 
 public class Employee {
 
-    private Long id;
     private final String firstName;
     private final String lastName;
     private final String phoneNumber;
     private final String positionName;
+    private Long id;
 
     public Employee(String firstName, String lastName, String phoneNumber, String positionName) {
         this.firstName = firstName;
@@ -30,6 +30,7 @@ public class Employee {
     public String getFirstName() {
         return firstName;
     }
+
     public String getLastName() {
         return lastName;
     }

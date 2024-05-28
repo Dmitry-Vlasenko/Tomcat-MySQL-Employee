@@ -41,8 +41,8 @@ public class EmployeeRepository implements AppRepository<Employee> {
                                 rs.getLong("id"),
                                 rs.getString("firstName"),
                                 rs.getString("lastName"),
-                        rs.getString("phoneNumber"),
-                        rs.getString("positionName")
+                                rs.getString("phoneNumber"),
+                                rs.getString("positionName")
                         )
                 );
             }

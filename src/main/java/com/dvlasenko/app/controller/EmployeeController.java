@@ -1,12 +1,12 @@
 package com.dvlasenko.app.controller;
 
+import com.dvlasenko.app.entity.Employee;
+import com.dvlasenko.app.repository.impl.EmployeeRepository;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import com.dvlasenko.app.entity.Employee;
-import com.dvlasenko.app.repository.impl.EmployeeRepository;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -44,7 +44,7 @@ public class EmployeeController extends HttpServlet {
         String lastName = request.getParameter("lastName");
         String phoneNumber = request.getParameter("phoneNumber");
         String positionName = request.getParameter("positionName");
-        Employee newEmployee = new Employee(firstName, lastName, phoneNumber,positionName);
+        Employee newEmployee = new Employee(firstName, lastName, phoneNumber, positionName);
         repository.create(newEmployee);
         response.sendRedirect("list");
     }
@@ -65,7 +65,7 @@ public class EmployeeController extends HttpServlet {
         String lastName = request.getParameter("lastName");
         String phoneNumber = request.getParameter("phoneNumber");
         String positionName = request.getParameter("positionName");
-        Employee employee = new Employee(id, firstName, lastName, phoneNumber,positionName );
+        Employee employee = new Employee(id, firstName, lastName, phoneNumber, positionName);
         repository.update(employee);
         response.sendRedirect("list");
     }

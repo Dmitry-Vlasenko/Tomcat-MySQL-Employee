@@ -20,7 +20,7 @@ public class DBConn {
             props.load(DBConn.class.getResourceAsStream("/db/db.properties"));
             Class.forName(props.getProperty("dbDriver"));
             conn = DriverManager.getConnection(
-                            props.getProperty("dbUrl"),
+                    props.getProperty("dbUrl"),
                     props.getProperty("dbUser"), props.getProperty("dbPass"));
         } catch (SQLException | IOException | ClassNotFoundException e) {
             LOGGER.log(Level.WARNING, e.getMessage(), e);
