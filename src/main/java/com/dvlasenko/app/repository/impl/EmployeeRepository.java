@@ -54,14 +54,14 @@ public class EmployeeRepository implements AppRepository<Employee> {
     }
 
     public Employee readById(Long id) {
-        Employee book = null;
+        Employee employee = null;
         String sql = "SELECT * FROM employee WHERE id = ?";
         try (Connection conn = DBConn.connect();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setLong(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                book = new Employee(id, rs.getString("firstName"),
+                employee = new Employee(id, rs.getString("firstName"),
                         rs.getString("lastName"),
                         rs.getString("phoneNumber"),
                         rs.getString("positionName")
@@ -71,7 +71,7 @@ public class EmployeeRepository implements AppRepository<Employee> {
         } catch (SQLException e) {
             LOGGER.log(Level.WARNING, e.getMessage(), e);
         }
-        return book;
+        return employee;
     }
 
     public void update(Employee employee) {

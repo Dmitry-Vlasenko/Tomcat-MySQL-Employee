@@ -28,7 +28,6 @@ public class EmployeeController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getServletPath();
-        LOGGER.log(Level.INFO, action);
         try {
             switch (action) {
                 case "/new" -> showNewForm(request, response);
@@ -49,6 +48,7 @@ public class EmployeeController extends HttpServlet {
         String lastName = request.getParameter("lastName");
         String phoneNumber = request.getParameter("phoneNumber");
         String positionName = request.getParameter("positionName");
+        LOGGER.log(Level.INFO, "lastName" + lastName);
         Employee newEmployee = new Employee(firstName, lastName, phoneNumber, positionName);
         repository.create(newEmployee);
         response.sendRedirect("list");

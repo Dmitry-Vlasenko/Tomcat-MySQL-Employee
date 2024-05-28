@@ -31,7 +31,7 @@
     <center>
         <h1>Employee</h1>
         <h3>
-            <a href="<%=request.getContextPath()%>/list"  class="greenButton">List Books</a>
+            <a href="<%=request.getContextPath()%>/list"  class="greenButton">List Employee</a>
         </h3>
     </center>
     <div align="center">
@@ -45,10 +45,10 @@
             <caption>
                 <h3>
                     <c:if test="${employee != null}">
-                        Edit Book
+                        Edit Employee
                     </c:if>
                     <c:if test="${employee == null}">
-                        Add New employee
+                        Add new employee
                     </c:if>
                 </h3>
             </caption>
