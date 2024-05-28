@@ -52,7 +52,7 @@
         <center>
             <h1>Book Store</h1>
             <h3>
-            <!-- <a href="<%=request.getContextPath()%>/new">Add New Book</a> -->
+            <!-- <a href="<%=request.getContextPath()%>/new">Add New employee</a> -->
                 <a href="<%=request.getContextPath()%>/new" class="greenButton">Add Book</a>
                 &nbsp;&nbsp;&nbsp;
                 <a href="<%=request.getContextPath()%>/list">List Books</a>
@@ -63,17 +63,19 @@
                 <caption><h2>Books</h2></caption>
                 <tr>
                     <th>ID</th>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Price</th>
+                    <th>firstName</th>
+                    <th>lastName</th>
+                    <th>phoneNumber</th>
+                    <th>positionName</th>
                     <th>Actions</th>
                 </tr>
-                <c:forEach var="book" items="${listBook}">
+                <c:forEach var="employee" items="${listEmployee}">
                     <tr>
-                        <td><c:out value="${book.id}" /></td>
-                        <td><c:out value="${book.title}" /></td>
-                        <td><c:out value="${book.author}" /></td>
-                        <td><c:out value="${book.price}" /></td>
+                        <td><c:out value="${employee.id}" /></td>
+                        <td><c:out value="${employee.firstName}" /></td>
+                        <td><c:out value="${employee.lastName}" /></td>
+                        <td><c:out value="${employee.phoneNumber}" /></td>
+                        <td><c:out value="${employee.positionName}" /></td>
                         <td>
                             <a href="<%=request.getContextPath()%>/edit?id=<c:out value='${book.id}' />">Edit</a>
                             &nbsp;&nbsp;&nbsp;&nbsp;

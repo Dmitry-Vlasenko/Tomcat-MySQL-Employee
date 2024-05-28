@@ -11,19 +11,24 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class EmployeeController extends HttpServlet {
+    private static final Logger LOGGER =
+            Logger.getLogger(EmployeeController.class.getName());
 
     private final EmployeeRepository repository = new EmployeeRepository();
-
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);
     }
-
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getServletPath();
+        LOGGER.log(Level.INFO, action);
         try {
             switch (action) {
                 case "/new" -> showNewForm(request, response);
@@ -52,6 +57,7 @@ public class EmployeeController extends HttpServlet {
     private void read(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         List<Employee> listEmployee = repository.read();
+        LOGGER.log(Level.INFO, listEmployee.toString());
         request.setAttribute("listEmployee", listEmployee);
         RequestDispatcher dispatcher =
                 request.getRequestDispatcher("pages/employee_list.jsp");
